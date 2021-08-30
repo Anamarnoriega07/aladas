@@ -8,7 +8,6 @@ public class Aeropuerto {
 
     @Id // Primary Key
     @Column(name = "aeropuerto_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // AUTOINCREMENTAL
     private Integer aeropuertoId;
 
     @Column(name = "nombre_aeropuerto")
