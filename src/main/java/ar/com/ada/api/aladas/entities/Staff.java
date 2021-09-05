@@ -7,9 +7,12 @@ import javax.persistence.*;
 public class Staff extends Persona {
 
     @Id
-    @Column(name = "staff_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "staff_id")
     private Integer staffId;
+
+    @OneToOne(mappedBy = "staff", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Usuario usuario;
 
     public Integer getStaffId() {
         return staffId;
@@ -17,6 +20,15 @@ public class Staff extends Persona {
 
     public void setStaffId(Integer staffId) {
         this.staffId = staffId;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+        usuario.setStaff(this);
     }
 
 }
