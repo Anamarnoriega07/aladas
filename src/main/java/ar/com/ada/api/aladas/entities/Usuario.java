@@ -12,12 +12,12 @@ import javax.persistence.*;
 import org.hibernate.annotations.NaturalId;
 
 @Entity
-@Table (name = "usuario")
+@Table(name = "usuario")
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "usuario_id")
+    @Column(name = "usuario_id")
     @NaturalId
     private Integer usuarioId;
 
@@ -28,15 +28,14 @@ public class Usuario {
 
     private String email;
 
-    @Temporal(TemporalType.DATE)
-    @Column (name = "fecha_login")
+    @Column(name = "fecha_login")
     private Date fechaLogin;
 
-    @Column (name = "tipo_usuario_id")
+    @Column(name = "tipo_usuario_id")
     private Integer tipoUsuarioId;
 
-    @OneToOne 
-    @JoinColumn (name = "staff_id", referencedColumnName = "staff_id")
+    @OneToOne
+    @JoinColumn(name = "staff_id", referencedColumnName = "staff_id")
     private Staff staff;
 
     @OneToOne
@@ -133,5 +132,4 @@ public class Usuario {
         }
     }
 
-    
 }

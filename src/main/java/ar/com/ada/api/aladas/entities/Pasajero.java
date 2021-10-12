@@ -27,7 +27,7 @@ public class Pasajero extends Persona {
         this.pasajeroId = pasajeroId;
     }
 
-       public Usuario getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
