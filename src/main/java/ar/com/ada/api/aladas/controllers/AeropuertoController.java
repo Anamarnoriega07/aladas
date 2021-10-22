@@ -23,6 +23,7 @@ public class AeropuertoController {
 
         respuesta.isOk = true;
         respuesta.message = "Se creo correctamente";
+        respuesta.id = aeropuerto.getAeropuertoId();
 
         return ResponseEntity.ok(respuesta);
         
