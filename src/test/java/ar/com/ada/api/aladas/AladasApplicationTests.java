@@ -115,7 +115,7 @@ class AladasApplicationTests {
 
 	}
 
-	/*
+	
 	@Test
 	void vueloValidarVueloMismoDestinoUsandoGeneral() {
 		Vuelo vuelo = new Vuelo();
@@ -126,7 +126,7 @@ class AladasApplicationTests {
 
 		assertEquals(ValidacionVueloDataEnum.ERROR_AEROPUERTOS_IGUALES, vueloService.validar(vuelo));
 	}
-
+	/*
 	@Test
 	void testearAeropuertoId() {
 		Aeropuerto aeropuerto = new Aeropuerto();

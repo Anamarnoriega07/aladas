@@ -9,6 +9,7 @@ import ar.com.ada.api.aladas.entities.Vuelo;
 import ar.com.ada.api.aladas.models.response.GenericResponse;
 import ar.com.ada.api.aladas.services.AeropuertoService;
 import ar.com.ada.api.aladas.services.VueloService;
+import ar.com.ada.api.aladas.services.VueloService.ValidacionVueloDataEnum;
 
 @RestController
 public class VueloController {
@@ -26,13 +27,25 @@ public class VueloController {
     public ResponseEntity<GenericResponse> postCrearVuelo(@RequestBody Vuelo vuelo) {
         GenericResponse respuesta = new GenericResponse();
 
-        service.crear(vuelo);
+        ValidacionVueloDataEnum resultadoValidacion = service.validar(vuelo);
+        if (service.validar(vuelo) == ValidacionVueloDataEnum.OK) {
+            service.crear(vuelo);
 
-        respuesta.isOk = true;
-        respuesta.id = vuelo.getVueloId();
-        respuesta.message = "Vuelo creado exitosamente";
+            respuesta.isOk = true;
+            respuesta.id = vuelo.getVueloId();
+            respuesta.message = "Vuelo creado exitosamente";
 
-        return ResponseEntity.ok(respuesta);
+            return ResponseEntity.ok(respuesta);
+        
+        }
+        else {
+
+            respuesta.isOk = false;
+            respuesta.message = "Error(" + resultadoValidacion.toString() + ")";
+            
+            return ResponseEntity.badRequest().body(respuesta);
+
+        }
 
     }
 
