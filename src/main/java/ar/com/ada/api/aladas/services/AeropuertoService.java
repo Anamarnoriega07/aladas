@@ -14,8 +14,6 @@ public class AeropuertoService {
     @Autowired
     private AeropuertoRepository repo;
 
-    // El Crear este tiene que pasarle como parametro el aeropuerto porque
-    // en ESTE caso no es autoincremental.
     public void crear(Integer aeropuertoId, String nombre, String codigoIATA) {
 
         Aeropuerto aeropuerto = new Aeropuerto(); // declaramos e instaciamos
@@ -44,7 +42,7 @@ public class AeropuertoService {
         String codigoIATA = aeropuerto.getCodigoIATA();
 
         // "AP"
-        //charAt recorre todos los caracteres.
+        // charAt recorre todos los caracteres.
         for (int i = 0; i < codigoIATA.length(); i++) {
             char c = codigoIATA.charAt(i);
 

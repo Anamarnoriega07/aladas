@@ -18,7 +18,6 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "usuario_id")
-    @NaturalId
     private Integer usuarioId;
 
     @NaturalId
@@ -32,7 +31,7 @@ public class Usuario {
     private Date fechaLogin;
 
     @Column(name = "tipo_usuario_id")
-    private Integer tipoUsuarioId;
+    private Integer tipoUsuario;
 
     @OneToOne
     @JoinColumn(name = "staff_id", referencedColumnName = "staff_id")
@@ -82,12 +81,12 @@ public class Usuario {
         this.fechaLogin = fechaLogin;
     }
 
-    public TipoUsuarioEnum getTipoUsuarioId() {
-        return TipoUsuarioEnum.parse(this.tipoUsuarioId);
+    public TipoUsuarioEnum getTipoUsuario() {
+        return TipoUsuarioEnum.parse(this.tipoUsuario);
     }
 
-    public void setTipoUsuarioId(TipoUsuarioEnum tipoUsuarioId) {
-        this.tipoUsuarioId = tipoUsuarioId.getValue();
+    public void setTipoUsuario(TipoUsuarioEnum tipoUsuarioId) {
+        this.tipoUsuario = tipoUsuarioId.getValue();
     }
 
     public Staff getStaff() {
@@ -106,12 +105,24 @@ public class Usuario {
         this.pasajero = pasajero;
     }
 
+    public Integer obtenerEntityId() {
+        
+        switch (this.getTipoUsuario()) {
+        case PASAJERO:
+            return this.getPasajero().getPasajeroId();
+        case STAFF:
+            return this.getStaff().getStaffId();
+        default:
+            break;
+        }
+        return null;
+    }
+
     public enum TipoUsuarioEnum {
         STAFF(1), PASAJERO(2);
 
         private final Integer value;
 
-        // NOTE: Enum constructor tiene que estar en private
         private TipoUsuarioEnum(Integer value) {
             this.value = value;
         }

@@ -120,7 +120,6 @@ public class Vuelo {
 
         private final Integer value;
 
-        // NOTE: Enum constructor tiene que estar en private
         private EstadoVueloEnum(Integer value) {
             this.value = value;
         }
