@@ -27,7 +27,7 @@ public class PasajeController {
 
         Pasaje pasaje = service.emitir(infoPasajes.reservaId);
 
-        respuesta.message = "El pasaje ha sido generada correctamente.";
+        respuesta.message = "Su pasaje ha sido generado exitosamente.";
         respuesta.isOk = true;
         respuesta.id = pasaje.getPasajeId();
 

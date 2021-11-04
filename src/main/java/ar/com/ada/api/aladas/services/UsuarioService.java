@@ -16,7 +16,7 @@ import ar.com.ada.api.aladas.entities.Pais.TipoDocuEnum;
 import ar.com.ada.api.aladas.entities.Usuario.TipoUsuarioEnum;
 import ar.com.ada.api.aladas.repos.UsuarioRepository;
 import ar.com.ada.api.aladas.security.Crypto;
-/*import ar.com.ada.api.aladas.sistema.comm.EmailService;*/
+import ar.com.ada.api.aladas.sistema.comm.EmailService;
 
 @Service
 public class UsuarioService {
@@ -28,8 +28,8 @@ public class UsuarioService {
     @Autowired
     PasajeroService pasajeroService;
     
-    /*@Autowired
-    EmailService emailService;*/
+    @Autowired
+    EmailService emailService;
     
 
     public Usuario buscarPorUsername(String username) {
@@ -85,8 +85,8 @@ public class UsuarioService {
             staffService.crearStaff(staff);
 
         }
-       /*emailService.SendEmail(usuario.getEmail(), "Registro Exitoso", "Bienvenido, usted ha sido registrado");
-        // Todo!*/
+       emailService.SendEmail(usuario.getEmail(), "Registro Exitoso", "Bienvenido, usted ha sido registrado en Aladas Airlines");
+        // Todo!
         return usuario;
     }
 

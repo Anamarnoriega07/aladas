@@ -34,9 +34,9 @@ public class PasajeService {
         reserva.getVuelo().setCapacidad(nuevaCapacidad);
 
         /* problema concurrencia
-         * "update vuelo set capacidad = 29 where vueloid = 99 and capacidad = 30"
-         * 
-         * "update vuelo set capacidad = 29 where vueloid = 99 and capacidad = 30"
+         * update 
+         * vuelo set capacidad = 29 
+         * where vueloid = 99 and capacidad = 30
          */
 
         vueloService.actualizar(reserva.getVuelo());
