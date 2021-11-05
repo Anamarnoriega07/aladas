@@ -6,9 +6,9 @@ Se crea una API REST de un sistema de Aerolineas, que nos permite:
 - Cargar una reserva de vuelos abiertos.
 - Generar la confirmacion de un Pasaje.
 
-Deploy (heroku):
+#### Deploy (heroku):
 https://aladas-airlines-app.herokuapp.com/
 
-Postman:
+#### Postman:
 https://www.getpostman.com/collections/00695ee00daab7bf7de9
 
