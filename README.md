@@ -1,4 +1,4 @@
-# aladas
+# Aladas
 
 Se crea una API REST de un sistema de Aerolineas, que nos permite:
 - Registrar un Usuario, diferenciandolo entre un STAFF y un PASAJERO.
