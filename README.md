@@ -7,5 +7,8 @@ Se crea una API REST de un sistema de Aerolineas, que nos permite:
 - Generar la confirmacion de un Pasaje.
 
 Deploy (heroku):
-https: //aladas-airlines-app.herokuapp.com/
+https://aladas-airlines-app.herokuapp.com/
+
+Postman:
+https://www.getpostman.com/collections/00695ee00daab7bf7de9
 
