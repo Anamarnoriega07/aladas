@@ -10,5 +10,5 @@ Se crea una API REST de un sistema de Aerolineas, que nos permite:
 https://aladas-airlines-app.herokuapp.com/
 
 #### Postman:
-https://www.getpostman.com/collections/00695ee00daab7bf7de9
+https://documenter.getpostman.com/view/16169904/UVC5DSPy
 
